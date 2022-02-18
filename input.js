@@ -5,22 +5,24 @@ export default class InputHandler{
             if(e.key === "ArrowDown" || 
                e.key === "ArrowUp" ||
                e.key === "ArrowLeft" ||
-               e.key === "Shift" ||
+               e.key === "x" ||
                e.key === "ArrowRight"  &&
                this.keys.indexOf(e.key) === -1 ){//1 tạo 1 lần key
+                this.keys.splice(this.keys.indexOf(e.key), this.keys.length);
                 this.keys.push(e.key);
             }
-            // console.log(e.key, this.keys);
+            console.log(this.keys);
         });
         window.addEventListener('keyup', (e) => {
             if(e.key === "ArrowDown" || 
                e.key === "ArrowUp" ||
                e.key === "ArrowLeft" ||
-               e.key === "Shift" ||
+               e.key === "x" ||
                e.key === "ArrowRight"){
                 this.keys.splice(this.keys.indexOf(e.key), this.keys.length);
+                this.keys.push('none');
             }
-            // console.log(e.key, this.keys);
+            console.log(this.keys);
         });
     }
 }
